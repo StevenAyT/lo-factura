@@ -24,7 +24,7 @@ export const Notifications = () => {
 
     return (
         <>
-            <IconButton aria-label="delete" size="medium" onClick={handleClick}>
+            <IconButton color="secondary" aria-label="delete" size="medium" onClick={handleClick}>
                 <Badge badgeContent={4} color="secondary">
                     <NotificationsOutlinedIcon fontSize="inherit" />
                 </Badge>
@@ -34,10 +34,9 @@ export const Notifications = () => {
                 sx={{
                     mt: 2,
                     ".MuiPopover-paper": {
-                        border: "2px solid",
-                        borderColor: "primary.dark",
-                        bgcolor: "primary.light",
+                        bgcolor: "primary.main",
                         width: 260,
+                        maxHeight: 300,
                         p: 1
                     }
                 }}
@@ -46,20 +45,21 @@ export const Notifications = () => {
                     horizontal: 'left',
                 }}
             >
-                <List>
-                    <ListItem disablePadding>
-                        <ListItemIcon >
-                            <InboxIcon />
-                        </ListItemIcon>
-                        <ListItemText sx={{ mx: -1 }} primary="lorem impsum lorem asl poli" />
-                    </ListItem>
-                    <Divider sx={{ bgcolor: "red", my: 1.5 }} />
-                    <ListItem disablePadding>
-                        <ListItemIcon>
-                            <InboxIcon />
-                        </ListItemIcon>
-                        <ListItemText sx={{ mx: -1 }} primary="lorem impsum lorem asl poli" />
-                    </ListItem>
+                <List sx={{ py: 2 }}>
+                    {[0, 1,].map((elm) => (
+                        <div key={elm}>
+                            <ListItem disablePadding>
+                                <ListItemIcon sx={{ color: "secondary.main" }}>
+                                    <InboxIcon />
+                                </ListItemIcon>
+                                <ListItemText sx={{ mx: -1, color: "secondary.main" }} primary={`Example text for a notifications in app ${elm + 1}`} />
+                            </ListItem>
+                            {/* FIXME:: Is a example for view conditional Divider */}
+                            {
+                                elm !== 1 && <Divider sx={{ bgcolor: "secondary.main", my: 1.5 }} />
+                            }
+                        </div>
+                    ))}
                 </List>
             </Popover>
         </>

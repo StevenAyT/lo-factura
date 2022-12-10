@@ -12,22 +12,29 @@ export interface SidebarProps {
 // Type SidebarSection
 
 export interface SidebarSectionProps {
-    children: ChildrenElement
+    children: ChildrenElement;
 }
 
-// Types SidebarItem
+// Types SidebarItemOptions
+
+interface Options {
+    path: string;
+    name: string;
+}
 
 export interface SidebarItemAndOptionsProps {
     title: string;
     Icon: JSX.Element;
-    options: string[];
+    options: Options[];
 }
+
+// Types SidebarItemSimple
 
 export type SidebarItemCommonProps = Omit<SidebarItemAndOptionsProps, "options">
 
 type SidebarItemConditionalProps =
     | { title: string, Icon: JSX.Element, options: false }
-    | { title: string, Icon: JSX.Element, options: string[] }
+    | { title: string, Icon: JSX.Element, options: Options[] }
 
 
 export type SidebarItemProps = SidebarItemCommonProps & SidebarItemConditionalProps

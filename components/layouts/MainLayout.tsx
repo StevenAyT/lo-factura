@@ -1,11 +1,10 @@
-import { FC, ReactNode } from "react"
-import Head from "next/head"
-import Box from "@mui/material/Box"
-import { Sidebar } from "../sidebar";
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-
 import EmojiPeopleOutlinedIcon from '@mui/icons-material/EmojiPeopleOutlined';
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import Head from "next/head";
+import { FC, ReactNode } from "react";
+import { sidebarOptions } from "../../const";
 import { Navbar } from "../navbar";
+import { Sidebar } from "../sidebar";
 
 interface Props {
     children: ReactNode;
@@ -27,22 +26,14 @@ export const MainLayout: FC<Props> = ({ children, title }) => {
                 </Sidebar.Section>
 
                 <Sidebar.Section>
-                    <Sidebar.Item title="Servicio al cliente" Icon={<EmojiPeopleOutlinedIcon />} options={["Presentacion", "ALgo"]} />
-                </Sidebar.Section>
-
-                <Sidebar.Section>
-                    <Sidebar.Item title="Modulo 2" Icon={<EmojiPeopleOutlinedIcon />} options={["COmposiscion", "Notas"]} />
-                </Sidebar.Section>
-
-                <Sidebar.Section>
-                    <Sidebar.Item title="Modulo 3" Icon={<EmojiPeopleOutlinedIcon />} options={["Caarpetas", "Notas"]} />
+                    <Sidebar.Item title="Servicio al cliente" Icon={<EmojiPeopleOutlinedIcon />}
+                        options={sidebarOptions} />
                 </Sidebar.Section>
             </Sidebar>
 
-
-            <Box mt={8}>
+            <div style={{ marginTop: 50 }}>
                 {children}
-            </Box>
+            </div>
         </>
     )
 }

@@ -15,17 +15,17 @@ export const ItemSimple = ({ title, Icon }: SidebarItemCommonProps) => {
         <Link href={`/${title.toLowerCase()}`} passHref style={{ textDecoration: "none" }} >
             <ListItem disablePadding onClick={handleToggleSidebar}
                 sx={{
-                    borderWidth: "1px", borderColor: "primary.light", borderStyle: "solid",
+                    borderWidth: "1px", borderColor: "secondary.main", borderStyle: "solid",
                     borderRadius: "10px", mt: 0.5, textDecoration: "none"
                 }}>
                 <ListItemButton sx={{ borderRadius: "10px" }}>
-                    <ListItemIcon sx={{ color: "primary.light" }}>
+                    <ListItemIcon sx={{ color: "secondary.main" }}>
                         {Icon}
                     </ListItemIcon>
                     <ListItemText primary={title} sx={{ textDecoration: "none" }} primaryTypographyProps={{
                         fontSize: 16,
                         fontWeight: 'bold',
-                        color: "primary.light",
+                        color: "secondary.main",
                     }} />
                 </ListItemButton>
             </ListItem>

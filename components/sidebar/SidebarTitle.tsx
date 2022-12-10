@@ -6,6 +6,6 @@ interface SidebarTitleProps {
 
 export const SidebarTitle = ({ title }: SidebarTitleProps) => {
     return (
-        <Typography color="primary.light" variant="h4" align="center" fontWeight="bolder" >{title}</Typography>
+        <Typography color="primary.light" variant="h4" align="center" fontWeight="bolder">{title}</Typography>
     )
 }

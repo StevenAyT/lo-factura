@@ -4,15 +4,29 @@ import { createTheme } from "@mui/material/styles";
 export const darkTheme = createTheme({
     palette: {
         background: {
-            default: "#1B2635",
+            default: "#152430",
         },
+        // Interface Principal -> Componentes grandes
         primary: {
-            dark: "#e8eaf6",
-            main: "#303f9f",
-            light: "#f5f5f5",
+            // INterfaces secundarias paper & .MuiPaper, divider  
+            dark: "#0A1929",
+            // dark: "#0A1929",
+            // Navbar, Sidebar(fondo), DataGrid
+            main: "#0d0747",
+            // main: "#151f64",
+            // Botones Chekcbox Slide
+            light: "#2A3F54",
         },
+        // Interface secundaria -> Componentes pequeños
         secondary: {
-            main: "#303f9f",
+            // Color  Datagrid
+            dark: "#7067a3",
+            // Color : iconos, bordes, Divider y letra
+            main: "#e8eaf6",
+            // 
+            light: "#FFFFFF",
+
         },
+
     },
 })

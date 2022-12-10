@@ -9,6 +9,7 @@ import Collapse from "@mui/material/Collapse";
 import List from "@mui/material/List";
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import { SidebarItemAndOptionsProps } from "../interfaces";
+import Link from "next/link";
 
 
 export const ItemOptions = ({ title, Icon, options }: SidebarItemAndOptionsProps) => {
@@ -20,38 +21,40 @@ export const ItemOptions = ({ title, Icon, options }: SidebarItemAndOptionsProps
       <ListItem
         disablePadding
         sx={{
-          borderWidth: "1px", borderColor: "primary.light", borderStyle: "solid",
+          borderWidth: "1px", borderColor: "secondary.main", borderStyle: "solid",
           borderRadius: "10px", mt: 0.5, textDecoration: "none"
         }}
       >
         <ListItemButton sx={{ borderRadius: "10px" }} onClick={() => setOpen(!open)}>
-          <ListItemIcon sx={{ color: "primary.light" }}>
+          <ListItemIcon sx={{ color: "secondary.main" }}>
             {Icon}
           </ListItemIcon>
           <ListItemText primary={title} sx={{ textDecoration: "none" }} primaryTypographyProps={{
             fontSize: 16,
             fontWeight: 'bold',
-            color: "primary.light",
+            color: "secondary.main",
           }} />
-          {open ? <ExpandLess sx={{ color: "primary.light" }} /> : <ExpandMore sx={{ color: "primary.light" }} />}
+          {open ? <ExpandLess sx={{ color: "secondary.main" }} /> : <ExpandMore sx={{ color: "secondary.main" }} />}
         </ListItemButton>
       </ListItem>
 
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
-          {options.map((elm) => (
-            <ListItemButton key={elm}>
-              <ListItemIcon>
-                <FiberManualRecordIcon sx={{ color: "primary.light", width: "12px", height: "12px" }} />
-              </ListItemIcon>
-              <ListItemText primary={elm}
-                primaryTypographyProps={{
-                  fontSize: 14,
-                  fontWeight: 'bolder',
-                  color: "primary.light",
-                }}
-              />
-            </ListItemButton>
+          {options.map(({ name, path }) => (
+            <Link key={path} href={path} style={{ textDecoration: "none" }}>
+              <ListItemButton >
+                <ListItemIcon>
+                  <FiberManualRecordIcon sx={{ color: "secondary.main", width: "12px", height: "12px" }} />
+                </ListItemIcon>
+                <ListItemText primary={name}
+                  primaryTypographyProps={{
+                    fontSize: 14,
+                    fontWeight: 'bolder',
+                    color: "secondary.main",
+                  }}
+                />
+              </ListItemButton>
+            </Link>
           ))}
         </List>
       </Collapse>

@@ -1,11 +1,11 @@
 import IconButton from "@mui/material/IconButton"
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
-import { useUIApp } from "../../../hooks/useUIApp"
+import { useUI } from "../../../hooks/useUI"
 
 export const ToggleSidebar = () => {
-    const { handleToggleSidebar } = useUIApp()
+    const { handleToggleSidebar } = useUI()
     return (
-        <IconButton onClick={handleToggleSidebar} aria-label="delete" size="medium"  >
+        <IconButton color="secondary" onClick={handleToggleSidebar} aria-label="delete" size="medium"  >
             <MenuOutlinedIcon fontSize="inherit" />
         </IconButton>
     )

@@ -1,0 +1,1 @@
+export { default as Atention, type IAtention } from "./Atention"

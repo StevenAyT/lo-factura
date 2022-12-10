@@ -20,7 +20,7 @@ export const Account = () => {
 
     return (
         <>
-            <IconButton aria-describedy={id} size="medium" onClick={handleClick}>
+            <IconButton color="secondary" aria-describedby={id} size="medium" onClick={handleClick}>
                 <AccountCircleOutlinedIcon fontSize="inherit" />
             </IconButton>
             <Popover
@@ -28,9 +28,8 @@ export const Account = () => {
                 sx={{
                     mt: 2,
                     ".MuiPopover-paper": {
-                        border: "2px solid",
-                        borderColor: "primary.dark",
-                        bgcolor: "primary.light",
+                        borderColor: "primary.main",
+                        bgcolor: "primary.main",
                         width: 200,
                         p: 1
                     }
@@ -40,9 +39,9 @@ export const Account = () => {
                     horizontal: 'left',
                 }}
             >
-                <Typography sx={{ pt: 2 }} align="center" fontWeight="bolder">Heidi Elena Carrillo Rodriguez</Typography>
-                <Divider sx={{ bgcolor: "red", my: 2 }} />
-                <Button size="medium" color="error" variant="outlined" fullWidth startIcon={<LogoutIcon />}>
+                <Typography color="secondary" sx={{ pt: 2 }} align="center" fontWeight="bolder">Heidi Elena Carrillo Rodriguez</Typography>
+                <Divider sx={{ bgcolor: "secondary.main", my: 2 }} />
+                <Button size="medium" color="error" variant="contained" fullWidth startIcon={<LogoutIcon />}>
                     Logout
                 </Button>
             </Popover>

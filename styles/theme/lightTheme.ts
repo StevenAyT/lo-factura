@@ -7,12 +7,16 @@ export const lightTheme = createTheme({
             default: "#F7F7F7",
         },
         primary: {
-            dark: "#172D44",
-            main: "#2A3F54",
-            light: "#EDEDED",
+            // Interfaces secundarias paper & .MuiPaper, divider  
+            dark: "#dde1e6",
+            // Navbar, Sidebar(fondo), DataGrid
+            main: "#0d0747",
+            // Botones Chekcbox Slide
+            light: "#f5e0e0",
         },
         secondary: {
-            main: "#303f9f",
+            // Color : iconos, bordes, Divider y letra
+            main: "#e8eaf6",
         },
     },
 })

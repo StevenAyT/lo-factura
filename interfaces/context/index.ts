@@ -1,4 +1,2 @@
-export interface UIState {
-    toggleTheme: boolean;
-    toggleSidebar: boolean;
-}
+export type { UIState } from "./ui"
+export type { ClientState, Clients } from "./clients"

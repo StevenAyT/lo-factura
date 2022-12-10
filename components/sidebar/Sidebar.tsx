@@ -1,7 +1,7 @@
 import Drawer from '@mui/material/Drawer';
 import Paper from '@mui/material/Paper';
 import { createContext } from 'react'
-import { useUIApp } from '../../hooks/useUIApp'
+import { useUI } from '../../hooks/useUI'
 import { SidebarProps } from './interfaces';
 
 interface SidebarContextProps {
@@ -14,7 +14,7 @@ const { Provider } = SidebarContext
 
 export const Sidebar = ({ children }: SidebarProps) => {
 
-    const { toggleSidebar, handleToggleSidebar } = useUIApp()
+    const { toggleSidebar, handleToggleSidebar } = useUI()
 
     return (
         <Provider value={{ handleToggleSidebar }}>

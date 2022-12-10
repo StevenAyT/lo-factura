@@ -3,7 +3,6 @@ import { UIState } from "../../interfaces/context";
 
 interface ContextProps {
     state: UIState;
-    handleToggleTheme: () => void;
     handleToggleSidebar: () => void;
 }
 
